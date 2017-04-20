@@ -1,4 +1,11 @@
 GIT
+  remote: https://github.com/Altech/action_args.git
+  revision: 98ce1b12168f0ef16ae344beb2efdb68a62649e3
+  ref: 98ce1b12168f0ef16ae344beb2efdb68a62649e3
+  specs:
+    action_args (2.2.0)
+
+GIT
   remote: https://github.com/rails-api/active_model_serializers.git
   revision: 95f832fd0e57ad5c960076c851bf553b88fb4430
   ref: 95f832fd0e57ad5c960076c851bf553b88fb4430
@@ -150,6 +157,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  action_args!
   active_model_serializers!
   annotate
   byebug
