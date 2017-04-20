@@ -1,8 +1,10 @@
 class Api::V2::CompaniesController < Api::V2::BaseController
   before_action :set_company, only: [:show]
 
-  def index
+  def index(country: nil)
     @companies = Company.all
+
+    @companies = @companies.where(country: country) if country
 
     @companies = preload_for(@companies)
 
