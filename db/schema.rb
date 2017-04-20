@@ -16,23 +16,14 @@ ActiveRecord::Schema.define(version: 0) do
   enable_extension "plpgsql"
 
   create_table "users" do |t|
-    t.string  "name", limit: 64
+    t.string  "name_en", limit: 64
+    t.string  "name_ja", limit: 64
+    t.integer "score", default: 0
   end
 
   create_table "jobs" do |t|
     t.integer  "user_id", null: false
     t.integer  "company_id", null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "posts" do |t|
-    t.integer "user_id"
-    t.integer "company_id"
-    t.integer  "page_view", default: 0, null: false
-    t.string   "title"
-    t.text     "body"
-    t.datetime "published_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

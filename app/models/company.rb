@@ -7,4 +7,17 @@ class Company < ApplicationRecord
     'united_states' => 'US',
   }
   enum country: COUNTRY_NAME_TO_CODE
+
+  has_many :jobs
+  has_many :employees, through: :jobs, source: :user
+
+  require 'uri'
+
+  def domain
+    if url
+      URI.parse(url).host
+    end
+  rescue URI::InvalidURIError
+    nil
+  end
 end
