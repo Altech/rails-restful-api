@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id      :integer          not null, primary key
+#  name_en :string(64)
+#  name_ja :string(64)
+#  score   :integer          default("0")
+#
+
 class User < ApplicationRecord
   acts_as_imageable image_names: [:avatar]
 

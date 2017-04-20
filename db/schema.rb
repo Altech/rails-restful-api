@@ -15,29 +15,7 @@ ActiveRecord::Schema.define(version: 0) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "users" do |t|
-    t.string  "name_en", limit: 64
-    t.string  "name_ja", limit: 64
-    t.integer "score", default: 0
-  end
-
-  create_table "jobs" do |t|
-    t.integer  "user_id", null: false
-    t.integer  "company_id", null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "images" do |t|
-    t.string   "name", default: "image", null: false
-    t.integer "imageable_id"
-    t.string  "imageable_type"
-    t.string  "url"
-    t.integer "file_width"
-    t.integer "file_height"
-  end
-
-  create_table "companies", force: true do |t|
+  create_table "companies", force: :cascade do |t|
     t.string   "name"
     t.date     "founded_on"
     t.string   "url"
@@ -45,8 +23,31 @@ ActiveRecord::Schema.define(version: 0) do
     t.text     "why_description"
     t.text     "what_description"
     t.text     "how_description"
-    t.string   "country",              limit: 2, default: "JP", null: false
+    t.string   "country",          limit: 2, default: "JP", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "images", force: :cascade do |t|
+    t.string  "name",           default: "image", null: false
+    t.integer "imageable_id"
+    t.string  "imageable_type"
+    t.string  "url"
+    t.integer "file_width"
+    t.integer "file_height"
+  end
+
+  create_table "jobs", force: :cascade do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "company_id", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string  "name_en", limit: 64
+    t.string  "name_ja", limit: 64
+    t.integer "score",              default: 0
+  end
+
 end

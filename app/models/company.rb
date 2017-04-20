@@ -1,3 +1,20 @@
+# == Schema Information
+#
+# Table name: companies
+#
+#  id               :integer          not null, primary key
+#  name             :string
+#  founded_on       :date
+#  url              :string
+#  origin           :text
+#  why_description  :text
+#  what_description :text
+#  how_description  :text
+#  country          :string(2)        default("JP"), not null
+#  created_at       :datetime
+#  updated_at       :datetime
+#
+
 class Company < ApplicationRecord
   acts_as_imageable image_names: [:avatar]
 
