@@ -75,7 +75,7 @@ module Api
         nested_attributes = nested.delete(:only) || []
         nested_associations = nested
 
-        association_object = model.reflections[ar_association]
+        association_object = model.reflections[ar_association.to_s]
         unless association_object
           raise "Could not find association(#{ar_association}) from class(#{model})"
         end
