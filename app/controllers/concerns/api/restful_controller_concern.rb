@@ -136,5 +136,9 @@ module Api::RestfulControllerConcern
         end
       end
     end
+
+    def preload_for(rel)
+      Api::Preloader.preload_for(rel, @fields, @include)
+    end
   end
 end
