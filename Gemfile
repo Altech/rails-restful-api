@@ -42,3 +42,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'wannabe_bool'
+
+gem 'active_model_serializers', github: 'rails-api/active_model_serializers', ref: '95f832fd0e57ad5c960076c851bf553b88fb4430'
