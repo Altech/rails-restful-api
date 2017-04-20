@@ -46,3 +46,4 @@ gem 'wannabe_bool'
 
 gem 'active_model_serializers', github: 'rails-api/active_model_serializers', ref: '95f832fd0e57ad5c960076c851bf553b88fb4430'
 gem 'kaminari'
+gem 'action_args', github: 'Altech/action_args', ref: '98ce1b12168f0ef16ae344beb2efdb68a62649e3' # turn off global configuration.

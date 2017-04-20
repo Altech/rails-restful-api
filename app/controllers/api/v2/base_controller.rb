@@ -1,5 +1,6 @@
 class Api::V2::BaseController < ApplicationController
   include ActionController::Serialization
+  include ActionArgs::AbstractControllerMethods
 
   include Api::RestfulControllerConcern
 
