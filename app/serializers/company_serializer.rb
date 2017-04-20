@@ -4,4 +4,8 @@ class CompanySerializer < ApplicationSerializer
   attributes :domain
 
   has_one :avatar
+
+  preload do
+    association :avatar
+  end
 end

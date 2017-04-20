@@ -4,6 +4,8 @@ class Api::V2::CompaniesController < Api::V2::BaseController
   def index
     @companies = Company.all
 
+    @companies = preload_for(@companies)
+
     render json: setup_pagination(@companies),
       fields: @fields,
       include: @include
