@@ -77,35 +77,4 @@ module Api
       "The parameter `#{@name}` of domain is `#{@domain.inspect}`, But got value `#{@passed_value}`"
     end
   end
-
-  class ForbiddenError < RescuableError[201, :forbidden]
-    def initialize(action, resource)
-      @action, @resource = action, resource
-    end
-
-    def message
-      "You are not authorized to #{@action} #{resource_name_human}."
-    end
-
-    private
-
-    def resource_name_human
-      if @resource.is_a?(Array)
-        @resource.map do |obj|
-          if obj.class < ActiveRecord::Base
-            "#{obj.class.name.underscore} #{obj.id}"
-          else
-            obj.to_s
-          end
-        end.join(" ")
-      elsif @resource.class < ActiveRecord::Base
-        "#{@resource.class.name.underscore} #{@resource.id}"
-      elsif @resource.is_a?(Class) && @resource < ActiveRecord::Base
-        @resource.name.underscore.pluralize
-      else
-        @resource.to_s
-      end
-    end
-  end
-
 end
