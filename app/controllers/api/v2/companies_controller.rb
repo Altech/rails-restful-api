@@ -2,7 +2,9 @@ class Api::V2::CompaniesController < Api::V2::BaseController
   before_action :set_company, only: [:show]
 
   def show
-    render json: @company
+    render json: @company,
+      fields: @fields,
+      include: @include
   end
 
   private
