@@ -1,6 +1,26 @@
 # Rails 5 で作る RESTful API 速習会
 
+## 速習メニュー
 
+### GET companies/:id (companies#show)
+
+* 次のフィールドを指定可能に : `id`, `name`, `url`, `origin`, `why_description`, `what_description`, `how_description`, `domain`
+* 次のアソシエーションを指定可能に : `avatar`
+  * このアソシエーションで指定可能なフィールド : `url`, `width`, `height`
+
+### GET companies (companies#index)
+
+* まずは全会社が変えるようにする
+* ページネーションできるように
+* Preloader を使って avatar を include したときに N + 1 が起こらないようにする
+  * Preloader の追加 : `git merge origin/preloader`
+* 国の絞り込みを追加する
+* adhoc 引数をメソッドの引数として明示する
+  * Acton Args の追加 : `git merge origin/action-args`
+
+### GET companies/:id/employees (companies#employees)
+
+Let's try!
 
 ---
 
