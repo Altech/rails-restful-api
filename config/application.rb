@@ -30,3 +30,5 @@ module RailsRestfulApi
     config.autoload_paths << Rails.root.join('lib')
   end
 end
+
+require(Rails.root + 'lib/patch')
