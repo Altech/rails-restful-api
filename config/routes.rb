@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
     # RESTful API
     namespace :v2 do
+      resources :companies, only: [:index, :show]
     end
   end
 end
