@@ -2,6 +2,8 @@
 
 ## 速習メニュー
 
+start: `git checkout origin/api-base`
+
 ### GET companies/:id (companies#show)
 
 * 次のフィールドを指定可能に : `id`, `name`, `url`, `origin`, `why_description`, `what_description`, `how_description`, `domain`
@@ -21,6 +23,8 @@
 ### GET companies/:id/employees (companies#employees)
 
 Let's try!
+
+完成品： https://github.com/Altech/rails-restful-api/pull/7
 
 ---
 
